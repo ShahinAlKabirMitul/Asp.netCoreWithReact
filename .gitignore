@@ -5,3 +5,6 @@
 /Sample/EmptyApp/EmptyApp/obj/Debug/netcoreapp2.0
 /Sample/EmptyApp/.vs/EmptyApp/v15
 /Sample/EmptyApp/EmptyApp/obj
+/Sample/WebAPIApp/.vs
+/Sample/WebAPIApp/WebAPIApp/obj
+/Sample/WebAPIApp/WebAPIApp/bin/Debug/netcoreapp2.0
