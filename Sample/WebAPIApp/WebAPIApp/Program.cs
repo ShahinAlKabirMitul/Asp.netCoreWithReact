@@ -19,6 +19,7 @@ namespace WebAPIApp
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .ConfigureLogging((context, builder) => { builder.AddFile("Logs/log-{date}.txt"); })
                 .UseStartup<Startup>()
                 .Build();
     }
