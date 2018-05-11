@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequestModel", "RequestMode
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{86CAF721-49EE-460E-8515-0B4AE9E4AAFE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{7507650E-0F88-426B-A0E4-57B8DCEF9BEE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{86CAF721-49EE-460E-8515-0B4AE9E4AAFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86CAF721-49EE-460E-8515-0B4AE9E4AAFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86CAF721-49EE-460E-8515-0B4AE9E4AAFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7507650E-0F88-426B-A0E4-57B8DCEF9BEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7507650E-0F88-426B-A0E4-57B8DCEF9BEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7507650E-0F88-426B-A0E4-57B8DCEF9BEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7507650E-0F88-426B-A0E4-57B8DCEF9BEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +65,7 @@ Global
 		{71ACBCC7-8625-4FC9-843F-6F3A250C2256} = {8E22B36D-7100-4944-9647-A7D00295BF44}
 		{1C38D18E-D4C7-4067-BD9A-6BDFFAA5661C} = {8E22B36D-7100-4944-9647-A7D00295BF44}
 		{86CAF721-49EE-460E-8515-0B4AE9E4AAFE} = {C3A41BFE-D5D1-4A7F-A97A-60909DA66429}
+		{7507650E-0F88-426B-A0E4-57B8DCEF9BEE} = {77F6354A-CBE8-43F9-985A-26E385D64610}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9FF84B12-416F-4B35-A27F-B6C4B428D3EF}
