@@ -16,6 +16,8 @@ namespace ViewModel
             IsFree = course.IsFree;
         }
 
+        
+
         public bool IsFree { get; set; }
 
         public string Topic { get; set; }
