@@ -18,13 +18,13 @@ namespace LmsApp.Server.Controllers
     [Route("api/Courses")]
     public class CoursesController : Controller
     {
-        private readonly LmsDbContext _db;
-        private IGenericService<Course, CourseRequestModel, CourseViewModel> _service;
+    
+        private GenericService<Course, CourseRequestModel, CourseViewModel> _service;
 
-        public CoursesController(LmsDbContext db,IGenericRepository<Course> repository,IGenericService<Course,CourseRequestModel,CourseViewModel> service)
+        public CoursesController(IGenericService<Course,CourseRequestModel,CourseViewModel> service)
         {
-            _db = db;
-            _service = service;
+         
+            _service = service as GenericService<Course, CourseRequestModel, CourseViewModel>;
         } 
         [HttpPost]
         [Route("Search")]
@@ -32,7 +32,7 @@ namespace LmsApp.Server.Controllers
         {
             
             var courses = await _service.SearchAsync(request);
-            return Ok();
+            return Ok(courses);
         }
     }
 }
