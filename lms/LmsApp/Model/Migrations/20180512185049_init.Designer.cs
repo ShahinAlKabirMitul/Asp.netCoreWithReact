@@ -11,15 +11,15 @@ using System;
 namespace Model.Migrations
 {
     [DbContext(typeof(LmsDbContext))]
-    [Migration("20180511102045_Course")]
-    partial class Course
+    [Migration("20180512185049_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.0.3-rtm-10026");
-              //  .HasAnnotation("SqlServer:ValueGenerationStrategy");
+                .HasAnnotation("ProductVersion", "2.0.3-rtm-10026")
+                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Model.Course", b =>
                 {
@@ -75,6 +75,38 @@ namespace Model.Migrations
                     b.HasIndex("Topic");
 
                     b.ToTable("Courses");
+                });
+
+            modelBuilder.Entity("Model.Teacher", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Courses");
+
+                    b.Property<DateTime>("Created");
+
+                    b.Property<string>("CreatedBy");
+
+                    b.Property<bool>("IsActive");
+
+                    b.Property<bool>("IsDeleted");
+
+                    b.Property<DateTime>("Modified");
+
+                    b.Property<string>("ModifiedBy");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Phone");
+
+                    b.Property<int>("TotalCredit");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Name");
+
+                    b.ToTable("Teachers");
                 });
 #pragma warning restore 612, 618
         }

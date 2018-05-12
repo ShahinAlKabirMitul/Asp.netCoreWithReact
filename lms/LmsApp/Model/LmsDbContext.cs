@@ -12,6 +12,7 @@ namespace Model
             
         }
         public DbSet<Course> Courses { get; set; }
+        public DbSet<Teacher> Teachers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -19,6 +20,8 @@ namespace Model
             modelBuilder.Entity<Course>().HasIndex(s => s.Name);
             modelBuilder.Entity<Course>().HasIndex(s => s.Topic);
             modelBuilder.Entity<Course>().HasIndex(s => s.IsFree);
+
+            modelBuilder.Entity<Teacher>().HasIndex(s => s.Name);
 
 
         }
