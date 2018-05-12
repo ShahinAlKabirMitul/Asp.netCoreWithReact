@@ -10,6 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Model;
+using Model.Repo;
+using Service;
 
 namespace LmsApp.Server
 {
@@ -27,6 +29,8 @@ namespace LmsApp.Server
         {
             services.AddDbContext<LmsDbContext>(options=>
                 options.UseSqlServer(Configuration.GetConnectionString("LmsDbContext")) );
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped(typeof(IGenericService<,,>), typeof(GenericService<,,>));
             services.AddMvc();
         }
 
