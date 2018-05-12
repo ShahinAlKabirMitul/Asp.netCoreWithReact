@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using Model;
+using Model.Repo;
 using RequestModel;
 using Service;
 using ViewModel;
@@ -18,18 +19,19 @@ namespace LmsApp.Server.Controllers
     public class CoursesController : Controller
     {
         private readonly LmsDbContext _db;
+        private IGenericService<Course, CourseRequestModel, CourseViewModel> _service;
 
-        public CoursesController(LmsDbContext db)
+        public CoursesController(LmsDbContext db,IGenericRepository<Course> repository,IGenericService<Course,CourseRequestModel,CourseViewModel> service)
         {
             _db = db;
-        }
+            _service = service;
+        } 
         [HttpPost]
         [Route("Search")]
         public async Task<IActionResult>  GetCourses([FromBody] CourseRequestModel request)
         {
-             BaseRepository<Course> repository = new BaseRepository<Course>(_db);
-            CourseService service = new CourseService(repository);
-            var courses = await service.SearchAsync(request);
+            
+            var courses = await _service.SearchAsync(request);
             return Ok();
         }
     }
