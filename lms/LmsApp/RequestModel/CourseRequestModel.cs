@@ -10,6 +10,7 @@ namespace RequestModel
 {
     public class CourseRequestModel : BaseRequestModel<Course>
     {
+      
         public CourseRequestModel(string keyword, string orderBy = "Modified", string isAscending = "False") : base(keyword, orderBy, isAscending)
         {
         }

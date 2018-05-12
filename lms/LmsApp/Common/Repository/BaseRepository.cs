@@ -6,10 +6,9 @@ using Common.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
-
 namespace Common.Repository
 {
-    internal class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : Entity
+    public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : Entity
     {
         public DbContext Db;
 

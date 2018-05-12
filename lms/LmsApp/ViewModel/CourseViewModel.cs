@@ -7,7 +7,7 @@ using Model;
 
 namespace ViewModel
 {
-    class CourseViewModel: BaseViewModel<Course>
+   public class CourseViewModel: BaseViewModel<Course>
     {
         public CourseViewModel(Course course) : base(course)
         {

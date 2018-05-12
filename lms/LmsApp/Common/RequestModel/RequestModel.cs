@@ -17,6 +17,7 @@ namespace Common.RequestModel
 
     public abstract class BaseRequestModel<TModel> where TModel : Entity
     {
+       
         protected const string All = "All";
 
         protected Expression<Func<TModel, bool>> ExpressionObj = e => true;
@@ -80,22 +81,22 @@ namespace Common.RequestModel
         }
 
 
-        //protected virtual Expression<Func<TModel, bool>> GetExpression()
-        //{
-        //    return ExpressionObj;
-        //}
-        protected abstract Expression<Func<TModel, bool>> GetExpression();
+        protected virtual Expression<Func<TModel, bool>> GetExpression()
+        {
+            return ExpressionObj;
+        }
+       // protected abstract Expression<Func<TModel, bool>> GetExpression();
         //public abstract IQueryable<TModel> IncludeParents(IQueryable<TModel> queryable);
-        public abstract Expression<Func<TModel, DropdownViewModel>> Dropdown();
+    //    public abstract Expression<Func<TModel, DropdownViewModel>> Dropdown();
         public virtual IQueryable<TModel> IncludeParents(IQueryable<TModel> queryable)
         {
             return queryable;
         }
 
-        //public virtual Expression<Func<TModel, DropdownViewModel>> Dropdown()
-        //{
-        //    return x => new DropdownViewModel() { Id = x.Id, Data = x };
-        //}
+        public virtual Expression<Func<TModel, DropdownViewModel>> Dropdown()
+        {
+            return x => new DropdownViewModel() { Id = x.Id, Data = x };
+        }
 
         public IQueryable<TModel> GetOrderedData(IQueryable<TModel> queryable)
         {
