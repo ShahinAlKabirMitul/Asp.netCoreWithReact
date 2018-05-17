@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Greeting from './Greeting';
+import Student from './student';
 
 class MyApp extends Component {
   render() {
@@ -9,44 +10,28 @@ class MyApp extends Component {
       {
         name: 'Kobir',
         course: 'React',
-        image:
-          'http://res.cloudinary.com/mitul/image/upload/v1516642029/cnc0d37jjmafm3smhxmg.jpg',
+        color: 'green',
       },
       {
         name: 'Any',
         course: 'C#',
-        image:
-          'http://res.cloudinary.com/mitul/image/upload/v1516642100/emsgtxcfc20ql3yrzn2m.jpg',
+        color: 'lightyellow',
       },
       {
         name: 'Pnay',
         course: 'Bangla',
-        image:
-          'http://res.cloudinary.com/mitul/image/upload/v1516642143/lquvzayxgcyqyce0hwxo.jpg',
+        color: 'lightgreen',
       },
     ];
     return (
       <div>
         <Greeting />
         <h2> {values.length} </h2>
-        {values.map(x => <h3>{x}</h3>)}
-        {students.map(stu => (
-          <h3>
-            {stu.name} <span>{stu.course}</span>{' '}
-          </h3>
-        ))}
-        {students.map(x => (
-          <ul>
-            <li>
-              {x.name}-{x.course}
-            </li>
-          </ul>
-        ))}
+
         <ul>
           {students.map(s => (
             <li>
-              <h1>{s.name}</h1>
-              <img src={s.image} alt="" />
+              <Student student={s} />
             </li>
           ))}
         </ul>
