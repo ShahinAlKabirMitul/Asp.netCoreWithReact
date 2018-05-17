@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Greeting from './Greeting';
+
 class MyApp extends Component {
   render() {
     let value = 'Hello guys ' + 'Date :' + new Date().toDateString();
@@ -25,6 +27,7 @@ class MyApp extends Component {
     ];
     return (
       <div>
+        <Greeting />
         <h2> {values.length} </h2>
         {values.map(x => <h3>{x}</h3>)}
         {students.map(stu => (
