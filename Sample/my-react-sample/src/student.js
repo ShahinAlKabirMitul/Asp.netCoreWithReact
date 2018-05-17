@@ -8,7 +8,7 @@ class Student extends Component {
     };
     return (
       <div>
-        <h1 style={myStyle}>{student.name}</h1>
+        <h1 style={myStyle} onClick={this.props.handleClick}>{student.name}</h1>
       </div>
     );
   }
