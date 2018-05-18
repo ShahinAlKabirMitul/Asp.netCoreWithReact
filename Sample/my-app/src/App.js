@@ -1,8 +1,28 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import HttpRepo from './Repository/repository';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      student: { name: 'everyone' },
+      keyword: '',
+      students: [],
+      filteredStudents: [],
+    };
+  }
+  componentWillMount() {
+    let r = new HttpRepo();
+
+    let temp = r.get('https://jsonplaceholder.typicode.com/users').then(x => {
+      this.setState({ students: x, filteredStudents: x });
+      console.log(x);
+    });
+  }
+
+  componentDidMount() {}
   render() {
     return (
       <div className="App">
