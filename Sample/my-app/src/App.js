@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import HttpRepo from './Repository/repository';
+import Student from './student';
 
 class App extends Component {
   constructor() {
@@ -24,16 +25,18 @@ class App extends Component {
 
   componentDidMount() {}
   render() {
+    const now = new Date();
+    let value = 'hello guys ' + now.toDateString();
+    let values = ['first', 'second', 'third'];
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <ul>
+        {this.state.filteredStudents.map(x => (
+          <li key={x.id}>
+            <Student studentObj={x} />
+          </li>
+        ))}
+      </ul>
     );
   }
 }
