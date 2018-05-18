@@ -6,7 +6,7 @@ import Student from './student';
 import StudentFilter from './studentFilter';
 import HttpRepo from './Repository/repository';
 
-class App extends Component {
+class MyApp extends Component {
   constructor() {
     super();
     this.state = {
@@ -18,12 +18,10 @@ class App extends Component {
     this.handleClick = this.handleClick.bind(this);
     this.handleStudentFilter = this.handleStudentFilter.bind(this);
   }
-  
   handleClick(x) {
     this.setState({ student: x });
     console.log(this.state);
   }
-
   handleStudentFilter(event) {
     this.setState({ keyword: event.target.value });
     var result = this.state.students.filter(
@@ -40,8 +38,8 @@ class App extends Component {
       console.log(x);
     });
   }
-
   componentDidMount() {}
+
   render() {
     const now = new Date();
     let value = 'hello guys ' + now.toDateString();
@@ -76,5 +74,4 @@ class App extends Component {
     );
   }
 }
-
-export default App;
+export default MyApp;

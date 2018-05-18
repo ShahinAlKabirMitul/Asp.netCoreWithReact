@@ -25,6 +25,7 @@ class Student extends Component {
     let s = this.props.studentObj;
     let myStyle = {
       background: s.color,
+      cursor: 'pointer',
     };
 
     return (
