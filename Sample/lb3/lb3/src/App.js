@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Students from './student/students';
+import Teachers from './teacher/teachers';
+import Courses from './courses/courses';
 
 class App extends Component {
   constructor(props) {
@@ -34,16 +36,6 @@ class App extends Component {
     });
   }
   render() {
-    let appStyle = {
-      display: 'flex',
-      justifyContext: 'center',
-      border: '1px solid black',
-      textAlign: 'center',
-      backgroud: '#919f91',
-      width: '640px',
-      height: '350px',
-      marginLeft: '350px',
-    };
     let divStyle = {
       width: '200px',
       border: '1px solid black',
@@ -52,8 +44,15 @@ class App extends Component {
     };
     return (
       <div>
+        <h1>Work on process</h1>
         <div style={divStyle}>
           <Students students={this.state.students} />
+        </div>
+        <div style={divStyle}>
+          <Teachers teachers={this.state.teachers} />
+        </div>
+        <div style={divStyle}>
+          <Courses courses={this.state.courses} />
         </div>
       </div>
     );
