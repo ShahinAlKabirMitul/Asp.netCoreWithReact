@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
 
-class Courses extends Component {
+class Course extends Component {
   constructor(props) {
     super(props);
   }
   // let students=this.this.props.students;
   render() {
-    let courses = this.props.courses;
+    let course = this.props.course;
 
     return (
       <div>
-        <h3>Course</h3>
-        <ul>{courses.map(course => <li key={course.id}>{course.name}</li>)}</ul>
+        <h5>{course.name}</h5>
       </div>
     );
   }
   z;
 }
-export default Courses;
+export default Course;
