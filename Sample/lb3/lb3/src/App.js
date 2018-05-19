@@ -3,6 +3,7 @@ import Student from './student/student';
 import Teacher from './teacher/teacher';
 import Course from './courses/course';
 import Filter from './filter';
+import ShowResult from './showResult';
 
 class App extends Component {
   constructor(props) {
@@ -69,13 +70,13 @@ class App extends Component {
     this.setState({ filteredStudents: result });
 
     this.setState({ keyword: event.target.value });
-    var result = this.state.teachers.filter(
+    result = this.state.teachers.filter(
       x => x.name.indexOf(event.target.value) !== -1
     );
     this.setState({ filteredTeachers: result });
 
     this.setState({ keyword: event.target.value });
-    var result = this.state.courses.filter(
+    result = this.state.courses.filter(
       x => x.name.indexOf(event.target.value) !== -1
     );
     this.setState({ filteredCourses: result });
@@ -92,9 +93,10 @@ class App extends Component {
       <div>
         <h1>Work on process</h1>
         <Filter handleFilter={this.handleStudentFilter} />
-        <h2>Filter : {this.state.keyword}</h2>
+
         <br />
         <div style={divStyle}>
+          <ShowResult count={this.state.filteredStudents.length} />
           <h3>Students</h3>
           <ul>
             {this.state.filteredStudents.map(stuObj => (
@@ -105,6 +107,7 @@ class App extends Component {
           </ul>
         </div>
         <div style={divStyle}>
+          <ShowResult count={this.state.filteredTeachers.length} />
           <h3>Teachers</h3>
           <ul>
             {this.state.filteredTeachers.map(teacherObj => (
@@ -115,6 +118,7 @@ class App extends Component {
           </ul>
         </div>
         <div style={divStyle}>
+          <ShowResult count={this.state.filteredCourses.length} />
           <h3>Courses</h3>
           <ul>
             {this.state.filteredCourses.map(courseObj => (
